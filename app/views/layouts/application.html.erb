@@ -1,0 +1,24 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Blgr</title>
+    </head>
+    <body>
+    <div id="nav">
+      <% if current_user %>
+        <%= current_user.username %>
+        <%= link_to 'Logout', :logout%>
+        <%= link_to 'Home', root_path %>
+      <% else %>
+        <%= link_to "Register", new_user_path%>
+        <%= link_to "Login", :login %>
+        <%= link_to 'Home', root_path %>
+      <% end %>
+    </div>
+
+    <h1>Blgr</h1>
+
+    <%= yield %>
+
+    </body>
+    </html>
